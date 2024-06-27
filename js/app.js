@@ -62,9 +62,6 @@ function sortear(){
 
 //reinicia o sorteio do amigo secreto, apagando os amigos incluídos e o resultado do sorteio
 function reiniciar(){
-    let amigosIncluidos = document.getElementById('lista-amigos');
-    amigosIncluidos.textContent = '';
-    
-    let resultadoSorteio = document.getElementById('lista-sorteio');
-    resultadoSorteio.innerHTML = '';
+    document.getElementById('lista-amigos').innerHTML = '';
+    document.getElementById('lista-sorteio').innerHTML = '';
 }
