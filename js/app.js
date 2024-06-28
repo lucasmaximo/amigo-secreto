@@ -2,14 +2,24 @@
 let amigos = [];
 let sorteios = [];
 
+//remover um amigo da lista pelo índice
+function removerAmigo(index){
+    amigos.splice(index, 1);
+    listarAmigos(amigos);
+}
+
 //função que imprime a lista de amigos no espaço de amigos incluídos
 function listarAmigos(amigos){
     let elementoDaLista = document.getElementById('lista-amigos'); //tag p
     elementoDaLista.innerHTML = ''; //limpando o conteúdo dentro da tag p
 
-    amigos.forEach(amigo => { //para cada amigo na lista de amigos
-        let p = document.createElement('p'); //crio um elemento p e armazeno na variável p
-        p.textContent = amigo; //conteúdo da variável p recebe amigo que acabou de ser adicionado
+    amigos.forEach((amigo, index) => { //para cada amigo na lista de amigos
+        let p = document.createElement('p'); //crio uma tag p e armazeno na variável p
+        p.textContent = amigo; //a tag p recém-criada recebe o amigo da iteração atual
+
+        p.addEventListener('click', function(){
+            removerAmigo(index); //adicionando evento de clique para remover amigo
+        });
         elementoDaLista.appendChild(p); //a tag p com o conteúdo do novo amigo entra na lista de amigos incluídos
     })
 }
