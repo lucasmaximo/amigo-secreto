@@ -52,7 +52,7 @@ function sortear(){
         alert('O sorteio não pode ser feito com menos de 4 amigos. Por favor, insira mais amigos.');
         return;
     }
-
+    
     //criando uma cópia do array original
     let amigosSorteados = amigos.slice();
 
@@ -67,7 +67,6 @@ function sortear(){
         //a lista de amigosSorteados é recriada excluindo o amigo que acabou de ser sorteado
         amigosSorteados = amigosSorteados.filter(a => a !== amigoSorteado);
     }
-    
     console.log(sorteios);
 
     //imprime em tela os sorteios na lista de sorteios
