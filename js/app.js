@@ -3,9 +3,15 @@ let amigos = [];
 let sorteios = [];
 
 //função que imprime a lista de amigos no espaço de amigos incluídos
-function listarAmigos(lista){
-    let listaAmigos = document.getElementById('lista-amigos');
-    listaAmigos.textContent = lista.join(', ');
+function listarAmigos(amigos){
+    let elementoDaLista = document.getElementById('lista-amigos'); //tag p
+    elementoDaLista.innerHTML = ''; //limpando o conteúdo dentro da tag p
+
+    amigos.forEach(amigo => { //para cada amigo na lista de amigos
+        let p = document.createElement('p'); //crio um elemento p e armazeno na variável p
+        p.textContent = amigo; //conteúdo da variável p recebe amigo que acabou de ser adicionado
+        elementoDaLista.appendChild(p); //a tag p com o conteúdo do novo amigo entra na lista de amigos incluídos
+    })
 }
 
 //adicionando os amigos na lista de amigos e limpa o campo depois de adicionar
