@@ -39,6 +39,7 @@ function adicionar(){
         return;
     }
 
+    //salvando o nome na lista de amigos e limpando o campo de digitação do nome
     amigos.push(campoNomeAmigo.value);
     campoNomeAmigo.value = '';
     
@@ -93,6 +94,10 @@ function sortear(){
         p.textContent = sorteio;
         listaSorteios.appendChild(p);
     });
+
+    //desabilitando botões de adicionar e de sortear
+    document.querySelector('.primary').disabled = true;
+    document.querySelector('.secondary').disabled = true;
 }
 
 //reinicia o sorteio do amigo secreto, apagando os amigos incluídos e o resultado do sorteio
@@ -102,4 +107,8 @@ function reiniciar(){
 
     sorteios = [];
     document.getElementById('lista-sorteio').innerHTML = '';
+
+    //reabilitando os botões de adicionar e de sortear
+    document.querySelector('.primary').disabled = false;
+    document.querySelector('.secondary').disabled = false;
 }

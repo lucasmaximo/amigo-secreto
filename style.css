@@ -204,3 +204,9 @@ body {
   background-color: #fff;
   color: #1875e8;
 }
+
+.primary:disabled, .secondary:disabled {
+  background-color: gray;
+  color:#fff;
+  cursor: not-allowed;
+}
