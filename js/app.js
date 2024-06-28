@@ -29,7 +29,7 @@ function adicionar(){
     let campoNomeAmigo = document.getElementById('nome-amigo');
 
     //validações
-    if(amigos.includes(campoNomeAmigo.value)){
+    if(amigos.includes(campoNomeAmigo.value.toUpperCase())){
         alert('O nome já foi incluído. Preencha um nome diferente.');
         campoNomeAmigo.value = '';
         return;
@@ -40,7 +40,7 @@ function adicionar(){
     }
 
     //salvando o nome na lista de amigos e limpando o campo de digitação do nome
-    amigos.push(campoNomeAmigo.value);
+    amigos.push(campoNomeAmigo.value.toUpperCase());
     campoNomeAmigo.value = '';
     
     //listar os amigos adicionados no amigo secreto
